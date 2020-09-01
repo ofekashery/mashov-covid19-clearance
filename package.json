@@ -1,0 +1,16 @@
+{
+  "name": "mashov-covid19-clearance",
+  "description": "Automation for filling the COVID-19 Clearance on Mashov every day.",
+  "version": "1.0.0",
+  "author": "Ofek Ashery",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "node-schedule": "^1.3.2",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {}
+}
