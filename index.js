@@ -4,7 +4,7 @@ const schedule = require('node-schedule');
 ////////////////////////////////////////////
 
 const config = {
-  parentId: 000000000,
+  parentId: '000000000',
   password: '12345678',
   schoolId: 000000,
   everyDay: true
