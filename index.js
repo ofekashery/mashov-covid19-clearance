@@ -38,8 +38,8 @@ const login = async () => {
     if (!res.ok) return;
     return res.json().then((json) => ({
       ...json,
-      csrfToken: res.headers.get('x-csrf-token'),
-      sessionId: res.headers.get('set-cookie').split('MashovSessionID=')[1].split(';')[0]
+      csrfToken: res.headers.get('Csrf-Token'),
+      sessionId: res.headers.get('set-cookie').split('MashovAuthToken=')[1].split(';')[0]
     }));
   });
 };
