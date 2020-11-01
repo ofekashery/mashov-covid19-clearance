@@ -39,7 +39,7 @@ const login = async () => {
     return res.json().then((json) => ({
       ...json,
       csrfToken: res.headers.get('x-csrf-token'),
-      sessionId: res.headers.get('set-cookie').split('MashovSessionID=')[1].split(';')[0]
+      sessionId: res.headers.get('set-cookie').split('MashovAuthToken=')[1].split(';')[0]
     }));
   });
 };
@@ -56,7 +56,7 @@ const sendClearances = async () => {
       headers: {
         'content-type': 'application/json',
         'x-csrf-token': loginData.csrfToken,
-        Cookie: `MashovSessionID=${loginData.sessionId}; Csrf-Token=${loginData.csrfToken}`
+        Cookie: `MashovAuthToken=${loginData.sessionId}; Csrf-Token=${loginData.csrfToken}`
       },
       body: JSON.stringify({
         answer: 3,
